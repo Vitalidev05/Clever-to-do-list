@@ -1,16 +1,24 @@
-import '@/assets/stylesheets/index.scss';
+// import '@/assets/stylesheets/index.scss';
 
+import firebase from 'firebase';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 
 import App from '@/App';
+import 'firebase/firestore';
+
+import { AppContext, auth, firestore } from './const/initFirebase';
+// Initialize Firebase
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+  <AppContext.Provider
+    value={{
+      firebase,
+      auth,
+      firestore,
+    }}
+  >
+    <App />
+  </AppContext.Provider>,
   document.getElementById('app')
 );
