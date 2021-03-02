@@ -1,13 +1,13 @@
 import { Button, Container, Grid } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import firebase from 'firebase';
-import React, { useContext } from 'react';
+import React from 'react';
 
 import 'regenerator-runtime';
-import { AppContext } from '../const/initFirebase';
+import { StateProps } from '@/const';
 
-const Login = (): JSX.Element => {
-  const { auth } = useContext(AppContext);
+const Login = (props: StateProps): JSX.Element => {
+  const { auth } = props;
 
   const login = async () => {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -39,4 +39,4 @@ const Login = (): JSX.Element => {
   );
 };
 
-export default Login;
+export { Login };

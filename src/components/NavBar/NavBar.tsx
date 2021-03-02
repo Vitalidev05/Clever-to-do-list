@@ -1,15 +1,15 @@
 import { Button, Grid } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import React, { useContext } from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
 
-import { AppContext } from '../const/initFirebase';
-import { HOME_ROUTE } from '../utils';
+import { StateProps } from '../../const/index';
+import { HOME_ROUTE } from '../../utils';
 
-const Navbar = (): JSX.Element => {
-  const { auth } = useContext(AppContext);
+const NavBar = (props: StateProps): JSX.Element => {
+  const { auth } = props;
   const [user] = useAuthState(auth);
 
   return (
@@ -17,7 +17,7 @@ const Navbar = (): JSX.Element => {
       <Toolbar variant="dense">
         <Grid container justify="flex-end">
           {user ? (
-            <Button onClick={() => auth.signOut()} variant="outlined">
+            <Button onClick={() => auth?.signOut()} variant="outlined">
               Выйти
             </Button>
           ) : (
@@ -31,4 +31,4 @@ const Navbar = (): JSX.Element => {
   );
 };
 
-export default Navbar;
+export { NavBar };

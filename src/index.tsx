@@ -1,24 +1,14 @@
-// import '@/assets/stylesheets/index.scss';
-
-import firebase from 'firebase';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-import App from '@/App';
+import App from './components/App';
 import 'firebase/firestore';
-
-import { AppContext, auth, firestore } from './const/initFirebase';
-// Initialize Firebase
+import store from './store/index';
 
 ReactDOM.render(
-  <AppContext.Provider
-    value={{
-      firebase,
-      auth,
-      firestore,
-    }}
-  >
+  <Provider store={store}>
     <App />
-  </AppContext.Provider>,
+  </Provider>,
   document.getElementById('app')
 );

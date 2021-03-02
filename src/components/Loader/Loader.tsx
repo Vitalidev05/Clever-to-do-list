@@ -17,4 +17,4 @@ const Loader = (): JSX.Element => (
   </Container>
 );
 
-export default Loader;
+export { Loader };

@@ -74,7 +74,10 @@
     "react-cookie": "^4.0.3",
     "react-dom": "^16.13.1",
     "react-firebase-hooks": "^2.2.0",
+    "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "regenerator-runtime": "^0.13.7",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
@@ -89,6 +92,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "devDependencies": {
+    "@types/react-redux": "^7.1.16",
     "@types/regenerator-runtime": "^0.13.0",
     "babel-polyfill": "^6.26.0"
   }

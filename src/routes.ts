@@ -1,5 +1,5 @@
-import Calendar from './components/Calendar';
-import Login from './components/Login';
+import Calendar from './components/Calendar/index';
+import Login from './components/Login/index';
 import { HOME_ROUTE, LOGIN_ROUTE } from './utils';
 
 export const publicRoutes = [

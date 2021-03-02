@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import { AppContext } from '../const/initFirebase';
-import { privateRoutes, publicRoutes } from '../routes';
-import { HOME_ROUTE, LOGIN_ROUTE } from '../utils';
+import { StateProps } from '../../const/index';
+import { privateRoutes, publicRoutes } from '../../routes';
+import { HOME_ROUTE, LOGIN_ROUTE } from '../../utils';
 
-const AppRouter = (): JSX.Element => {
-  const { auth } = useContext(AppContext);
+const AppRouter = (props: StateProps): JSX.Element => {
+  const { auth } = props;
   const [user] = useAuthState(auth);
 
   return user ? (
@@ -27,4 +27,4 @@ const AppRouter = (): JSX.Element => {
   );
 };
 
-export default AppRouter;
+export { AppRouter };

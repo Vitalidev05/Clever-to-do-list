@@ -9,10 +9,10 @@ import React from 'react';
 
 // import Loader from './Loader';
 
-const Chat = (): JSX.Element => (
+const Calendar = (): JSX.Element => (
   <Container>
     <div>Data</div>
   </Container>
 );
 
-export default Chat;
+export { Calendar };
