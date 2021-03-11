@@ -1,12 +1,7 @@
-import firebase from 'firebase';
-import { createContext } from 'react';
-import 'firebase/firestore';
+import firebase from 'firebase/app';
 
-interface IContext {
-  firebase: typeof firebase;
-  auth: firebase.auth.Auth;
-  firestore: firebase.firestore.Firestore;
-}
+import 'firebase/firestore';
+import 'regenerator-runtime';
 
 firebase.initializeApp({
   apiKey: 'AIzaSyAU5IW47WSRmjXICRKwyqJAyymmOuGL3Aw',
@@ -22,10 +17,4 @@ firebase.initializeApp({
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
-const AppContext = createContext<IContext>({
-  firebase,
-  auth,
-  firestore,
-});
-
-export { auth, firestore, AppContext };
+export { auth, firestore };

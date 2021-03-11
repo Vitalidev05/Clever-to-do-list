@@ -5,19 +5,26 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
 
-import { StateProps } from '../../const/index';
+import { useActions } from '../../hooks/useAction';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { HOME_ROUTE } from '../../utils';
 
-const NavBar = (props: StateProps): JSX.Element => {
-  const { auth } = props;
+const NavBar = (): JSX.Element => {
+  const { auth } = useTypedSelector(store => store.authFirebase);
   const [user] = useAuthState(auth);
+  const { deleteState } = useActions();
+
+  const signOut = async () => {
+    await auth?.signOut();
+    deleteState();
+  };
 
   return (
     <AppBar color="secondary" position="static">
       <Toolbar variant="dense">
         <Grid container justify="flex-end">
           {user ? (
-            <Button onClick={() => auth?.signOut()} variant="outlined">
+            <Button onClick={signOut} variant="outlined">
               Выйти
             </Button>
           ) : (

@@ -2,12 +2,12 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import { StateProps } from '../../const/index';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { privateRoutes, publicRoutes } from '../../routes';
 import { HOME_ROUTE, LOGIN_ROUTE } from '../../utils';
 
-const AppRouter = (props: StateProps): JSX.Element => {
-  const { auth } = props;
+const AppRouter = (): JSX.Element => {
+  const { auth } = useTypedSelector(store => store.authFirebase);
   const [user] = useAuthState(auth);
 
   return user ? (

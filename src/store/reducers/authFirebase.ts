@@ -1,12 +1,11 @@
 import { AuthActionType } from '../../const';
-import { auth, firestore, AppContext } from '../../const/initFirebase';
+import { auth, firestore } from '../../initFirebase';
 import { SET_AUTH_TRUE, SET_AUTH_FALSE } from '../actions/actionTypes';
 
 const initialState = {
   isAuth: false,
   auth,
   firestore,
-  AppContext,
 };
 
 const authorization = (state = initialState, action: AuthActionType) => {

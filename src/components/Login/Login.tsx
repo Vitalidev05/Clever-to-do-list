@@ -4,10 +4,11 @@ import firebase from 'firebase';
 import React from 'react';
 
 import 'regenerator-runtime';
-import { StateProps } from '@/const';
 
-const Login = (props: StateProps): JSX.Element => {
-  const { auth } = props;
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+
+const Login = (): JSX.Element => {
+  const { auth } = useTypedSelector(store => store.authFirebase);
 
   const login = async () => {
     const provider = new firebase.auth.GoogleAuthProvider();

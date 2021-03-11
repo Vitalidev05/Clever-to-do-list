@@ -4,13 +4,15 @@ import { BrowserRouter } from 'react-router-dom';
 
 import './App.scss';
 
-import { StateProps } from '../../const/index';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 import AppRouter from '../AppRouter/index';
 import Loader from '../Loader/index';
 import Navbar from '../NavBar/index';
 
-const App = (props: StateProps): JSX.Element => {
-  const [, loading] = useAuthState(props.auth);
+const App = (): JSX.Element => {
+  const { auth } = useTypedSelector(state => state.authFirebase);
+
+  const [, loading] = useAuthState(auth);
 
   if (loading) {
     return <Loader />;
