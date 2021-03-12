@@ -33,63 +33,63 @@
 # Folders sturture
 ```
 └──src
-    ├──components					# React components
-        ├──App						# App component
+    ├──components					        # React components
+        ├──App						        # App component
             ├──App.tsx
             ├──index.ts
             └──App.scss
-        ├──AppRouter				# AppRouter component for routes
+        ├──AppRouter				      # AppRouter component for routes
             ├──AppRouter.tsx
             └──index.ts  
-        ├──Calendar					# Calendar component
-            ├──AddTodo				# AddTodo component
+        ├──Calendar					      # Calendar component
+            ├──AddTodo				    # AddTodo component
                 ├──AddTodo.tsx
                 ├──AddTodo.scss
                 └──index.ts
-            ├──Date					# Date component
+            ├──Date					      # Date component
                 ├──Date.scss
                 ├──Date.tsx
                 └──index.ts
-            ├──Day					# Day component
+            ├──Day					      # Day component
                 ├──Day.scss
                 ├──Day.tsx
                 └──index.ts
-            ├──Todo					# Todo component
+            ├──Todo					      # Todo component
                 ├──Todo.scss
                 ├──Todo.tsx
                 └──index.ts
             ├──Calendar.scss		
             ├──Calendar.tsx
             └──index.ts       
-         ├──Home					# Home component
+         ├──Home					        # Home component
              ├──Home.tsx
              └──index.ts
-         ├──Loader					# Loader component
+         ├──Loader					      # Loader component
              ├──Loader.tsx
              └──index.ts
-         ├──Login					# Login component
+         ├──Login					        # Login component
              ├──Login.tsx
              └──index.ts
-         └──NavBar					# NavBar component
+         └──NavBar					      # NavBar component
              ├──NavBar.tsx
              └──index.ts
-	├──const						# const data for project
+	├──const						            # const data for project
 	    ├──date.ts
 	    └──index.ts
-    ├──hooks						# custom hooks to connect redux
+    ├──hooks						          # custom hooks to connect redux
 	    ├──useAction.ts
 	    └──useTypedSelector.ts
-	├──store						# redux store
-	    ├──actions					# store actions
+	├──store						            # redux store
+	    ├──actions					        # store actions
 		    ├──actions.ts			
 		    ├──actionTypes.ts
 		    └──index.ts
-	    ├──reducers					# store reducers
+	    ├──reducers					        # store reducers
 		    ├──authFirebase.ts
 		    ├──calendar.ts
 		    └──rootReducer.ts
 	    └──index.ts
-    ├──utils						# utils for project
+    ├──utils						          # utils for project
 	    ├──arrayUtils.ts
 	    └──index.ts
 	├──index.tsx					
@@ -100,16 +100,16 @@
 # FIRESTORE STRUCTURE
 
 ```
-    └──Users                            			#main collection for users
-	    └──UserId                       			#user id document
-	        └──date                    				#collection of dates with tasks for a specific user
-	            └──dateid               			#date with tasks example 16_03_2021
-				    └──todos						#todos for current user for current date
-					    └──todoId					#current todo id	                        
-	                        ├──taskName         	#task name (string)
-                            ├──taskText         	#task description (string)(string)
-                            ├──done            		#task status (true/false)
-                            └──date             	#task date (string)
+    └──Users                            		    #main collection for users
+	    └──UserId                       			    #user id document
+	        └──date                    				    #collection of dates with tasks for a specific user
+	            └──dateid               			    #date with tasks example 16_03_2021
+				          └──todos						          #todos for current user for current date
+					            └──todoId					        #current todo id	                        
+	                        ├──taskName      	    #task name (string)
+                              ├──taskText       #task description (string)(string)
+                              ├──done           #task status (true/false)
+                              └──date           #task date (string)
 
 ```
  # APPLICATION STACK
