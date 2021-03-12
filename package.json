@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --open --hot -d",
-    "build": "cross-env NODE_ENV=production webpack -p",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -f -r build",
     "analyze": "cross-env analyze=true NODE_ENV=production webpack -p",
@@ -65,7 +65,6 @@
     "file-loader": "^6.1.0",
     "firebase": "^8.2.9",
     "firebase-admin": "^9.5.0",
-    "fs": "^0.0.1-security",
     "glob-all": "^3.2.1",
     "html-webpack-plugin": "^4.5.0",
     "husky": "^4.3.0",
@@ -100,6 +99,7 @@
   "devDependencies": {
     "@types/react-redux": "^7.1.16",
     "@types/regenerator-runtime": "^0.13.0",
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "fs": "^0.0.1-security"
   }
 }

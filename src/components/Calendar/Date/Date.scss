@@ -1,0 +1,31 @@
+.dot {
+  &_container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  &_uncomplited {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid red;
+    border-radius: 50%;
+  }
+  &_complited {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+}
+
+.date_card {
+  flex-wrap: nowrap;
+  transform: translateZ(0);
+  min-width: 80px;
+}
+
+.typography {
+  text-align: center;
+}

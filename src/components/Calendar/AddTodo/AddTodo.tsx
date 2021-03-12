@@ -56,6 +56,7 @@ export const AddTodo = (props: ITodosProps) => {
 
   return (
     <div className={style.flex}>
+      <p className={style.date}>ADD NEW TASK</p>
       <p className={style.date}>{selectedDate}</p>
       <TextField
         rowsMax={2}
@@ -93,7 +94,7 @@ export const AddTodo = (props: ITodosProps) => {
         onClick={sendTask}
         disabled={!todoText || !todoName}
       >
-        send
+        ADD TASK
       </Button>
     </div>
   );
